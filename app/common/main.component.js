@@ -29,7 +29,7 @@ class Main extends Component {
                             <ul className="nav navbar-nav">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/cars">Cars</Link></li>
-                            <li><Link to="/about/1234">About</Link></li>
+                            <li><Link to="/about/1234">dataTable</Link></li>
                             <li><Link to={'/customers/2/' + base64.encode('dheeraj@gmail.com')}>customer</Link></li>
                             <li><Link to="/mapBox">MapBox</Link></li>
                             <li><Link to="/mapDistance">mapDistance</Link></li>
