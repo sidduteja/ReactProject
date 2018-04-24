@@ -80,8 +80,6 @@ class MapMultipleMarker extends React.Component {
 }
 
     render(){
-     
-         console.log('fff-',this.state)
     return (<div>
     <div id="map1" style={{'width': '75%','height': '365px'}}></div>
     {this.state.locationsData.map((row, index) => {

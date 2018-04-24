@@ -12,7 +12,7 @@ class Customers extends Component {
   constructor(props) {
 
     super(props)
-      console.log('propsCust===',props)
+      
     this.state = {
 
      customersData: [],
@@ -43,9 +43,9 @@ class Customers extends Component {
     userName: 'dheeraj',
     
   }    
-  console.log('llll===',loginDetails)
+ // console.log('llll===',loginDetails)
   const loginResult = await LoginService.authCheck(loginDetails);
- console.log('method==',loginResult)
+ //console.log('method==',loginResult)
 }
 
 async driving(name){
@@ -65,7 +65,7 @@ async componentDidMount(){
 
   render(){
   const email = base64.decode(this.props.match.params.email)
-  console.log('thisCust---',this)
+  //console.log('thisCust---',this)
   return(<div>
     <p onClick={this.test.bind(this)}>Customers</p>
     <p>{this.state.name}</p>

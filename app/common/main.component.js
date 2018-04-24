@@ -8,7 +8,7 @@ class Main extends Component {
 
   constructor(props) {
     super(props)
-    console.log('propsMain',props)
+   
     this.state = {
       boardName: '',
       boardIconUrl: '',
@@ -19,7 +19,6 @@ class Main extends Component {
   }
 
     render(){
-        console.log('thisMain====',this)
         return(
             <div>
                 <nav className="navbar navbar-default">
@@ -29,11 +28,12 @@ class Main extends Component {
                             <ul className="nav navbar-nav">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/cars">Cars</Link></li>
-                            <li><Link to="/about/1234">dataTable</Link></li>
+                            <li><Link to="/about/1234">dataTable/streetView</Link></li>
                             <li><Link to={'/customers/2/' + base64.encode('dheeraj@gmail.com')}>customer</Link></li>
                             <li><Link to="/mapBox">MapBox</Link></li>
                             <li><Link to="/mapDistance">mapDistance</Link></li>
                             <li><Link to="/mapMultipleMarkers">mapMultipleMarkers</Link></li>
+                            <li><Link to="/charts">charts</Link></li>
                             </ul>
                         </div>
                     </div>

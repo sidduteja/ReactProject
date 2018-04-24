@@ -6,7 +6,7 @@ import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
 class Car extends Component {
  constructor(props){
    super(props);
-   console.log('propsCar===',props)
+   
    this.state ={
      people:[
        {"firstname":"siddu","lastname":"teja"},
@@ -17,9 +17,9 @@ class Car extends Component {
  }
 
  get getdata(){
-   console.log("sdfdsfg")
+   
    const content = this.state.people.map((menu, menuIndex) => <Bus x={menu} key={menuIndex} />)
-     console.log(content)
+     
    return content
  }
     render(){

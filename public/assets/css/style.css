@@ -1,0 +1,111 @@
+/* Data table css start*/
+
+.react-bs-table-tool-bar .react-bs-table-search-form{
+	display: flex;
+	justify-content: flex-end;
+	}
+	.react-bs-table-tool-bar .react-bs-table-search-form .form-control{
+	width: 60%;
+	}
+
+	
+	.react-bs-table-pagination .dropdown, .react-bs-table-pagination .dropup{
+	float: right;
+	}
+	
+	.react-bs-table-pagination p{
+	display: inline-block;
+	color: #5f6c7a;
+	padding-top: 6px;
+	}
+	
+	.react-bs-table-pagination .btn-secondary{
+	border: 2px solid #d9e3e9;
+	background: #FFFFFF;
+	color: #333;
+	padding: 6px 13px 6px 17px;
+	}
+	
+	.react-bs-table-pagination .btn-secondary:focus ,react-bs-table-pagination .btn-secondary:hover{
+	border: 2px solid #d9e3e9;
+	background: #FFFFFF;
+	color: #333;
+	box-shadow: none;
+	}
+	
+	.react-bs-table-sizePerPage-dropdown .caret {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px dashed;
+	display: inline-block;
+	height: 50%;
+	margin-left: 2px;
+	vertical-align: middle;
+	width: 0;
+	}
+	
+	/* .dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+	border-bottom: 4px dashed;
+	border-top: 0 none;
+	content: "";
+	} 
+	
+	.react-bs-table .caret:after {
+	font-family:"Material Design Icons";
+	content: "\2191";
+	color: rgb(204, 204, 204) !important;
+	}
+	
+	.react-bs-table .dropup .caret:after,
+	.react-bs-table .navbar-fixed-bottom .dropdown .caret:after {
+	font-family:"Material Design Icons";
+	content: "\2193";
+	color: rgb(204, 204, 204) !important;
+	}*/
+	
+	
+	.react-bs-table-sizePerPage-dropdown .btn-secondary,
+	.react-bs-table-sizePerPage-dropdown .btn{
+	position: relative;
+	}
+	.react-bs-table-sizePerPage-dropdown .btn-secondary::before{
+	position: absolute;
+	content: 'Show entries';
+	left:-92px;
+	color: #5f6c7a;
+	}
+	
+	
+	
+	.react-bs-table-pagination .dropdown-toggle::after{
+	display: none;
+	}
+	
+	
+	.react-bs-table-pagination .btn-secondary:not(:disabled):not(.disabled).active,
+	.react-bs-table-pagination .btn-secondary:not(:disabled):not(.disabled):active,
+	.react-bs-table-pagination .show>.btn-secondary.dropdown-toggle{
+	border: 2px solid #d9e3e9;
+	background: #FFFFFF;
+	color: #333;
+	}
+	
+	.react-bs-table-pagination .btn-secondary:not(:disabled):not(.disabled).active:focus,
+	.react-bs-table-pagination .btn-secondary:not(:disabled):not(.disabled):active:focus,
+	.react-bs-table-pagination .show>.btn-secondary.dropdown-toggle:focus{
+	box-shadow: none;
+	}
+	
+	.react-bs-table-pagination .dropdown-menu{
+	min-width: 4rem;
+	}
+
+	.react-bs-table-pagination .pagination {
+		float: right;
+		margin-top: 0;
+	}
+
+	.map-alignment{
+		width: 70%;
+		height: 600px;
+	}
