@@ -10,12 +10,14 @@ class Home extends Component {
     super(props)
     this.state ={
       testData:[],
-      json:{userId:2}
+      json:{userId:2},
+      parent:'dheeraj',
+      showModal:false
     }
   }
 
    async componentWillMount(){
-     console.log('componentWillMount')
+    // console.log('componentWillMount')
    }
     // this.setState({testData:this.state.json})
     //  await fetch('https://jsonplaceholder.typicode.com/posts/1',{ 
@@ -26,32 +28,36 @@ class Home extends Component {
     // .then(json => console.log('will'))
    
 
-  //  async componentDidMount(){
-  //   console.log('componentDidMount')
-  //   await fetch('https://jsonplaceholder.typicode.com/posts/1',{ 
-  //    method: 'GET'
-  //  })
-  //   .then(response => response.json())
-  //   .then(json => this.setState({testData:json}))
-  // }
+   async componentDidMount(){
+   // console.log('componentDidMount')
+    await fetch('https://jsonplaceholder.typicode.com/posts/1',{ 
+     method: 'GET'
+   })
+    .then(response => response.json())
+    .then(json => this.setState({testData:json}))
+  }
 
+
+   changeParent(name){
+    this.setState({parent:name})
+   }
   modal(){
-    console.log('fdf')
+   // console.log('fdf')
     
    // $("p").css("background-color", "yellow");
-    //$("#myModal").modal('show');
-    
+  //  $("#myModal").modal('show');
+  this.setState({testData:this.state.json,showModal:true})
   }
 
     render(){
       console.log('==render===')
      
-      return (<div><p>home</p><br/>
+      return (<div><p>{this.state.parent}</p><br/>
        <div>
-       <button type="button" className="btn btn-info btn-lg" data-toggle='modal' data-target="#myModal" onClick={this.modal.bind(this)} >open modal</button>
+       <button type="button" disabled={this.state.email} className="btn btn-info btn-lg" data-toggle='modal' data-target="#myModal" onClick={this.modal.bind(this)} >open modal</button>
        
        </div>
-       <Modal />
+      <Modal value={this.state.testData} change={this.changeParent.bind(this)}/>
        </div>)
     }
 }

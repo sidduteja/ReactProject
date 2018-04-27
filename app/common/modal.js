@@ -14,6 +14,7 @@
        constructor(props) {
         console.log('modalconstructor')
            super(props)
+           console.log('==props==',props)
             this.state={
                 
                
@@ -23,10 +24,20 @@
        async componentWillMount(){
         console.log('modalcomponentWillMount')
        }
-       componentWillReceiveProps(nextProps){ 
+
+       async componentDidMount(){
+        console.log('modalcomponentDidMount')
+       }
+
+       componentWillReceiveProps(nextProps,prevProps){ 
        
-           
+        console.log('componentWillReceiveProps',nextProps,prevProps)
       
+        }
+
+
+        parentChange(){
+          this.props.change('teja')
         }
 
       
@@ -47,7 +58,7 @@
         <p>Some text in the modal.</p>
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-default" onClick={this.parentChange.bind(this)} data-dismiss="modal">Close</button>
       </div>
     </div>
 
