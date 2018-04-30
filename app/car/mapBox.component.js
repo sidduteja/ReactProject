@@ -14,14 +14,25 @@ constructor(props){
     delay: 300,
     result: 'No result',
     responseData:{},
-    result:0
+    result:0,
+    mapId:'map'
   }
 }
 
+async componentDidMount() {		
+  await this.mapInitialization();
+}
 
-
-  componentDidMount(){
-
+mapInitialization(){
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGhlZXJhamNoYW5kcmEiLCJhIjoiY2o1ZGdpbGgwMGk2ZTJycXhidTNnc2xwbyJ9.H8CE7G9egOcbvWLgH9RZEw';
+    var map  =  new mapboxgl.Map({
+        container: this.state.mapId,
+        center: [-122.420679, 37.772537],
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 1,
+        
+        maxZoom: 20
+    });
       }
   
 
@@ -30,7 +41,8 @@ constructor(props){
 
 render(){
 
-return(<div>Map Box</div>);
+return(<div>
+<div id={this.state.mapId} style={{ width: "90vw",  height: "70vh"}}></div></div>);
 
 }
 

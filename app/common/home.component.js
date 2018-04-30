@@ -12,7 +12,9 @@ class Home extends Component {
       testData:[],
       json:{userId:2},
       parent:'dheeraj',
-      showModal:false
+      showModal:false,
+      value:"test",
+      value1:"test2"
     }
   }
 
@@ -55,7 +57,7 @@ class Home extends Component {
       return (<div><p>{this.state.parent}</p><br/>
        <div>
        <button type="button" disabled={this.state.email} className="btn btn-info btn-lg" data-toggle='modal' data-target="#myModal" onClick={this.modal.bind(this)} >open modal</button>
-       
+       <br/><input type="text" value={this.state.value != "test" ? this.state.value:this.state.value1}></input>
        </div>
       <Modal value={this.state.testData} change={this.changeParent.bind(this)}/>
        </div>)
