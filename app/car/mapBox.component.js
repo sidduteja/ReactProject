@@ -15,7 +15,9 @@ constructor(props){
     result: 'No result',
     responseData:{},
     result:0,
-    mapId:'map'
+    mapId:'map',
+    title:'test',
+    description:"test description"
   }
 }
 
@@ -25,24 +27,44 @@ async componentDidMount() {
 
 mapInitialization(){
     mapboxgl.accessToken = 'pk.eyJ1IjoiZGhlZXJhamNoYW5kcmEiLCJhIjoiY2o1ZGdpbGgwMGk2ZTJycXhidTNnc2xwbyJ9.H8CE7G9egOcbvWLgH9RZEw';
-    var map  =  new mapboxgl.Map({
+    const map  = this.map =  new mapboxgl.Map({
         container: this.state.mapId,
-        center: [-122.420679, 37.772537],
+        center:[-122.420679, 37.772537],
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 1,
+        zoom: 5,
         
         maxZoom: 20
     });
+
+    var el = document.createElement('div');
+    el.className = 'marker';
+
+    new mapboxgl.Marker(el)
+    .setLngLat([-122.420679, 37.772537])
+    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML('<h3>' + this.state.title + '</h3><p>' + this.state.description + '</p>'))
+    .addTo(map);
+    // const popup = new mapboxgl.Popup({})
+    // .setHTML(<p>text</p>);
       }
   
+fly(){
+  console.log('fly')
+  this.map.flyTo({
+    center:[-83.2396334,42.3526253]});
+}
 
-
-
+// ({
+//   center: [
+//       -74.50 + (Math.random() - 0.5) * 10,
+//       40 + (Math.random() - 0.5) * 10]
+// });
 
 render(){
 
 return(<div>
-<div id={this.state.mapId} style={{ width: "90vw",  height: "70vh"}}></div></div>);
+<div id={this.state.mapId} style={{ width: "90vw",  height: "70vh"}}></div><br/>
+<button onClick={this.fly.bind(this)}>fly</button></div>);
 
 }
 
