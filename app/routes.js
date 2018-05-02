@@ -9,6 +9,7 @@ import Car from './car/car.component.js'
 import Main from './common/main.component.js'
 import Customers from './car/customer.component.js'
 import MapBox from './car/mapBox.component.js'
+import MapBoxMultiple from './car/mapBoxMultiple.component.js'
 import MapDistance from './car/mapDistance.component.js'
 import MapMultipleMarker from './car/mapMultipleMarker.component.js'
 import Charts from './car/charts.component.js'
@@ -30,6 +31,8 @@ export default <Router history={browserHistory}>
     <Route path="/mapDistance" component={MapDistance}/> 
     <Route path="/mapMultipleMarkers" component={MapMultipleMarker}/> 
     <Route path="/charts" component={Charts}/>
+    <Route path="/mapBoxMultiple" component={MapBoxMultiple}/>
+    
   </div>
 
 </Router>

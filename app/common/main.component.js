@@ -33,6 +33,7 @@ class Main extends Component {
                             <li><Link to="/about/1234">dataTable/streetView</Link></li>
                             <li><Link to={'/customers/2/' + base64.encode('dheeraj@gmail.com')}>customer</Link></li>
                             <li><Link to="/mapBox">MapBox</Link></li>
+                            <li><Link to="/mapBoxMultiple">MBMultiple</Link></li>
                             <li><Link to="/mapDistance">mapDistance</Link></li>
                             <li><Link to="/mapMultipleMarkers">mapMultipleMarkers</Link></li>
                             <li><Link to="/charts">charts</Link></li>

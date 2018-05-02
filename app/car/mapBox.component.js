@@ -5,7 +5,7 @@ import QrReader from 'react-qr-reader'
 import S3Upload from 'react-s3-uploader/s3upload';
 import Rating from 'react-rating'
 
-class Testing extends Component{
+class MapBox extends Component{
 constructor(props){
   super(props)
   this.state={
@@ -41,24 +41,20 @@ mapInitialization(){
 
     new mapboxgl.Marker(el)
     .setLngLat([-122.420679, 37.772537])
-    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setPopup(new mapboxgl.Popup({ offset: 25 })
     .setHTML('<h3>' + this.state.title + '</h3><p>' + this.state.description + '</p>'))
     .addTo(map);
-    // const popup = new mapboxgl.Popup({})
-    // .setHTML(<p>text</p>);
+    
       }
   
 fly(){
   console.log('fly')
   this.map.flyTo({
-    center:[-83.2396334,42.3526253]});
+    center:[-83.2396334,42.3526253]
+  });
 }
 
-// ({
-//   center: [
-//       -74.50 + (Math.random() - 0.5) * 10,
-//       40 + (Math.random() - 0.5) * 10]
-// });
+
 
 render(){
 
@@ -71,4 +67,4 @@ return(<div>
 
 }
 
-export default Testing
+export default MapBox
