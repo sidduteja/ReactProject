@@ -72,16 +72,7 @@ componentWillMount(){
 }
 
 async componentDidMount() {		
-  $(function(){
-        $("#test").css({"background-color": "red"});
-
-        $("button").click(function(){
-          $("#text1").html("<strong>teja</strong>");
-          $("#text2").text("teja");
-          $("#text3").val("teja");
-        })
-    
-});
+ 
   await this.mapInitialization();
  
 }
@@ -129,9 +120,7 @@ mapInitialization(){
       }
 
 
-  button(){
-    console.log('rrr')
-  }
+ 
   
 fly(index){
   const  monument =this.state.fly[index];
@@ -143,10 +132,7 @@ fly(index){
 render(){
 
 return(<div>
-  <p  id="text1">JQuery</p><br/>
-  <p  id="text2">Html</p><br/>
-  <input type="text" id="text3" value="Sid"></input>
-  <button id="test2" onClick={this.button.bind(this)}>Test</button>
+ 
  
 <div id={this.state.mapId} style={{ width: "90vw",  height: "70vh"}}></div><br/>
 {this.state.place.map((menu, menuIndex) => {
