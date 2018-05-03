@@ -13,6 +13,7 @@ import MapBoxMultiple from './car/mapBoxMultiple.component.js'
 import MapDistance from './car/mapDistance.component.js'
 import MapMultipleMarker from './car/mapMultipleMarker.component.js'
 import Charts from './car/charts.component.js'
+import Jquery from './car/Jquery.component.js'
 
 
 export default <Router history={browserHistory}> 
@@ -32,7 +33,7 @@ export default <Router history={browserHistory}>
     <Route path="/mapMultipleMarkers" component={MapMultipleMarker}/> 
     <Route path="/charts" component={Charts}/>
     <Route path="/mapBoxMultiple" component={MapBoxMultiple}/>
-    
+     <Route path="/jQuery" component={Jquery}/> 
   </div>
 
 </Router>

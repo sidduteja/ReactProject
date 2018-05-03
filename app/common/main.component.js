@@ -37,6 +37,7 @@ class Main extends Component {
                             <li><Link to="/mapDistance">mapDistance</Link></li>
                             <li><Link to="/mapMultipleMarkers">mapMultipleMarkers</Link></li>
                             <li><Link to="/charts">charts</Link></li>
+                            <li><Link to="/jQuery">JQuery</Link></li>
                             </ul>
                         </div>
                     </div>

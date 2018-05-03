@@ -40,7 +40,7 @@ constructor(props){
     "geometry": {
         "type": "Point",
         "coordinates": 
-          [-86.2731788,39.7796999]
+          [22.5288914,45.0804521]
         
     }
 },
@@ -53,22 +53,37 @@ constructor(props){
   "geometry": {
       "type": "Point",
       "coordinates": 
-        [-91.509762,39.6522839]
+        [78.4354041,17.4308632]
       
   }
 }
 ],
 fly:[
   {'center': [-83.2396334,42.3526253]},
-  {'center': [-86.2731788,39.7796999]},
-  {'center': [-91.509762,39.6522839]}
+  {'center': [22.5288914,45.0804521]},
+  {'center': [78.4354041,17.4308632]}
 ],
 place:[{place1:"place1"},{place1:"place2"},{place1:"place3"}]
   }
 }
 
+componentWillMount(){
+  
+}
+
 async componentDidMount() {		
+  $(function(){
+        $("#test").css({"background-color": "red"});
+
+        $("button").click(function(){
+          $("#text1").html("<strong>teja</strong>");
+          $("#text2").text("teja");
+          $("#text3").val("teja");
+        })
+    
+});
   await this.mapInitialization();
+ 
 }
 
 mapInitialization(){
@@ -101,12 +116,6 @@ mapInitialization(){
          
       });
 
-      // new mapboxgl.Marker(el)
-      //     .setLngLat(marker.geometry.coordinates)
-      //     .addTo(map);
-      //     const popup = new mapboxgl.Popup({})
-      //       .setHTML(marker.properties.message);
-
         // create the marker
         new mapboxgl.Marker(el)
              .setLngLat(marker.geometry.coordinates)
@@ -115,21 +124,17 @@ mapInitialization(){
            .addTo(map);
 
   });
-    // var el = document.createElement('div');
-    // el.className = 'marker';
-
-    // new mapboxgl.Marker(el)
-    // .setLngLat([-122.420679, 37.772537])
-    // .setPopup(new mapboxgl.Popup({ offset: 25 })
-    // .setHTML('<h3>' + this.state.title + '</h3><p>' + this.state.description + '</p>'))
-    // .addTo(map);
+  
     
       }
+
+
+  button(){
+    console.log('rrr')
+  }
   
 fly(index){
-  console.log(index)
   const  monument =this.state.fly[index];
-  console.log(monument)
   this.map.flyTo(monument);
 }
 
@@ -138,6 +143,11 @@ fly(index){
 render(){
 
 return(<div>
+  <p  id="text1">JQuery</p><br/>
+  <p  id="text2">Html</p><br/>
+  <input type="text" id="text3" value="Sid"></input>
+  <button id="test2" onClick={this.button.bind(this)}>Test</button>
+ 
 <div id={this.state.mapId} style={{ width: "90vw",  height: "70vh"}}></div><br/>
 {this.state.place.map((menu, menuIndex) => {
  
