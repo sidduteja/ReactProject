@@ -37,7 +37,14 @@
 
 
         parentChange(){
-          this.props.change('teja')
+          
+        //  this.props.change('teja')
+
+        setTimeout(async function() {
+          jQuery(function($) {
+              $('#myModal').modal('hide');
+          });
+   }, 10000);
         }
 
       
@@ -45,7 +52,7 @@
        render() {
            console.log('yyy')
            return (
-            <div id="myModal" className="modal fade" role="dialog">
+            <div id="myModal" className="modal fade" role="dialog" data-backdrop="static">
   <div className="modal-dialog">
 
    
@@ -58,7 +65,7 @@
         <p>Some text in the modal.</p>
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-default" onClick={this.parentChange.bind(this)} data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-default" onClick={this.parentChange.bind(this)} >Close</button>
       </div>
     </div>
 
