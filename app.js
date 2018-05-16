@@ -12,7 +12,7 @@ var AWS = require('aws-sdk');
 var s3Router = require('react-s3-uploader/s3router');
 var Login = require('./routes/login');
 const app = express()
-const port =  3000
+const port =  4000
 app.use('/login', Login);
 
 

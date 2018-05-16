@@ -1,7 +1,7 @@
 'use strict'
 
 import React, {Component, PropTypes} from 'react'
-
+import $ from 'jquery'
 
 class Jquery extends Component{
     constructor(props){
