@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 import Bus from './bus.component.js'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
+import SEO from './SEO';
+
 
 class Car extends Component {
  constructor(props){
@@ -26,7 +28,7 @@ class Car extends Component {
       const Map = ReactMapboxGl({
       accessToken: "pk.eyJ1IjoiZGhlZXJhamNoYW5kcmEiLCJhIjoiY2o1ZGdpbGgwMGk2ZTJycXhidTNnc2xwbyJ9.H8CE7G9egOcbvWLgH9RZEw"
       });
-        return (<Map
+        return (<div><Map
   style="mapbox://styles/mapbox/streets-v9"
   containerStyle={{
     height: "70vh",
@@ -38,7 +40,9 @@ class Car extends Component {
       layout={{ "icon-image": "harbor-15" }}>
 
     </Layer>
-</Map>);
+</Map>
+<p>hello</p>
+<SEO url="cars" /></div>);
 // return(
 //   <div>
 //

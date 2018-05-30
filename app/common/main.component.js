@@ -13,14 +13,17 @@ class Main extends Component {
       boardName: '',
       boardIconUrl: '',
       boardType: '',
-      loaded: false
+      loaded: 0
     }
 
   }
 
  
-
+setActive(index){
+this.setState({loaded:index})
+}
     render(){
+        console.log('index',this.state.loaded)
         return(
             <div>
                 <nav className="navbar navbar-default">
@@ -28,9 +31,9 @@ class Main extends Component {
 
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul className="nav navbar-nav">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/cars">Cars</Link></li>
-                            <li><Link to="/about/1234">dataTable/streetView</Link></li>
+                            <li><Link to="/" className={this.state.loaded == 1 ? "account-active":''} onClick={this.setActive.bind(this,1)} >Home</Link></li>
+                            <li><Link to="/cars" className={this.state.loaded == 2  ? "account-active":''}onClick={this.setActive.bind(this,2)}>Cars</Link></li>
+                            <li><Link to="/about/1234" onClick={this.setActive.bind(this,3)}>dataTable/streetView</Link></li>
                             <li><Link to={'/customers/2/' + base64.encode('dheeraj@gmail.com')}>customer</Link></li>
                             <li><Link to="/mapBox">MapBox</Link></li>
                             <li><Link to="/mapBoxMultiple">MBMultiple</Link></li>
