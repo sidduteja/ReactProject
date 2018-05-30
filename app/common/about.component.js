@@ -23,8 +23,7 @@ class About extends React.Component {
         email:'teja@gmail.com',
         datein:"01/06/2018",
         dateOut:"02/06/2018"
-      }],
-      active:0
+      }]
       
     }
   }
@@ -70,6 +69,7 @@ renderShowsTotal(start, to, total) {
   }
 
     render(){
+      
     return (<div>
     <div style={{height:'50%'}}>
        <BootstrapTable striped hover id="datatable"  pagination search={true} data={this.state.data} options={{ sizePerPage: 25, sortIndicator: true, paginationShowsTotal: this.renderShowsTotal , prePage: 'Previous', nextPage: 'Next', alwaysShowAllBtns: true}}>
