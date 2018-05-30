@@ -9,10 +9,8 @@ import _ from 'lodash';
 const SEO = (props) => {
 
     let content = _.find( Meta, { url: props.url } );
-    console.log('meta',content)
     if ( ! content ) {
-        con
-        content = _.find( Meta, { url: 'default' } );
+           content = _.find( Meta, { url: 'default' } );
     }
 
     return (
