@@ -42,10 +42,10 @@ class Main extends Component {
                         </div>
                     </div>
                 </nav>
-                <div>
+                {/* <div>
 
                     {this.props.children}
-                </div>
+                </div> */}
                 <div><p> MAin PAge</p>
                 </div>
             </div>

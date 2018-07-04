@@ -51,7 +51,7 @@ class Jquery extends Component{
       //        values.push($(this).val())
       // })
 
-      console.log('--val--',values)
+    //  console.log('--val--',values)
     
 
       /* Will give u value content for input tags */

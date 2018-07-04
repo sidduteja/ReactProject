@@ -48,7 +48,7 @@ mapInitialization(){
       }
   
 fly(){
-  console.log('fly')
+  //console.log('fly')
   this.map.flyTo({
     center:[-83.2396334,42.3526253]
   });
@@ -57,7 +57,7 @@ fly(){
 
 
 render(){
-
+  console.log(this.props,'$$$$$$$$$$$')
 return(<div>
 <div id={this.state.mapId} style={{ width: "90vw",  height: "70vh"}}></div><br/>
 <button onClick={this.fly.bind(this)}>fly</button></div>);

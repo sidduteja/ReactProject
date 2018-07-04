@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import { BrowserRouter as Router,Redirect,Route,Switch} from 'react-router-dom'
 import {browserHistory} from 'react-router';
 import Home from './common/home.component.js'
 import About from './common/about.component.js'
@@ -15,12 +15,14 @@ import MapMultipleMarker from './car/mapMultipleMarker.component.js'
 import Charts from './car/charts.component.js'
 import Jquery from './car/Jquery.component.js'
 
+const data = 'hello'
 
 export default <Router history={browserHistory}> 
   <div>
-    <Main />
+  <Main  />
+    <Switch>
+    
     <Route exact path="/" component={Home}/>
-    {/* <Route path="/about" component={About}/> */}
     <Route  path="/about/:password"
     render={(props) => {
              return  <About name="sidd" {...props} /> 
@@ -28,12 +30,22 @@ export default <Router history={browserHistory}>
     
     <Route path="/customers/:id/:email" component={Customers}/>
     <Route path="/cars" component={Car}/>
-    <Route path="/mapBox" component={MapBox}/>
-    <Route path="/mapDistance" component={MapDistance}/> 
-    <Route path="/mapMultipleMarkers" component={MapMultipleMarker}/> 
-    <Route path="/charts" component={Charts}/>
+    <Route exact path="/mapBox"  component={MapBox} />
+    <Route path="/mapDistance" component={MapDistance}/>
+
+     <Route path="/mapMultipleMarkers" 
+     component={(props) => <MapMultipleMarker {...props}/>}/> 
+
+     <Route path="/charts" 
+     render ={(props) => {
+     return <Charts {...props}/> }} />
+
+
     <Route path="/mapBoxMultiple" component={MapBoxMultiple}/>
      <Route path="/jQuery" component={Jquery}/> 
+     <Route exact  path="/jQuery" component={Jquery}></Route>
+     <Redirect from="/abc.cfm" to="/jQuery" push />
+     </Switch>
   </div>
 
 </Router>
